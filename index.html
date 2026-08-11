@@ -3,256 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zippy Web Agency | High-Converting Digital Experiences</title>
+    <title>Zippy Web Agency | Next-Gen Digital Engineering</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandDark: '#0D0D12',
-                        brandPurple: '#6366F1',
-                        brandBlue: '#3B82F6',
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        body { background-color: #0D0D12; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
+        body { background-color: #050508; color: #F3F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+        
+        /* Apple-Grade Glassmorphism */
+        .apple-glass {
+            background: rgba(18, 18, 26, 0.65);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .glass-card:hover {
-            border-color: rgba(99, 102, 241, 0.5);
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.2);
+        
+        .apple-glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .text-gradient {
-            background: linear-gradient(135deg, #6366F1 0%, #3B82F6 100%);
+
+        .apple-glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Gradient Glow Effects */
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .apple-text-gradient {
+            background: linear-gradient(135deg, #FFFFFF 0%, #A5B4FC 50%, #6366F1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .glow-btn {
-            background: linear-gradient(135deg, #6366F1 0%, #3B82F6 100%);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+
+        .apple-btn {
+            background: #FFFFFF;
+            color: #000000;
+            transition: all 0.3s ease;
         }
-        .glow-btn:hover {
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.7);
+
+        .apple-btn:hover {
+            background: #6366F1;
+            color: #FFFFFF;
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
         }
     </style>
 </head>
-<body class="selection:bg-brandPurple selection:text-white">
+<body class="selection:bg-indigo-600 selection:text-white">
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/10 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <!-- Logo Placeholder -->
-                <img src="/logo.png" alt="Zippy Web Logo" class="h-8 w-auto fallback-logo hidden" onerror="this.classList.add('hidden')">
-                <span class="text-2xl font-extrabold tracking-wider text-white flex items-center gap-1">
-                    ZIPPY<span class="text-brandPurple">WEB</span>
-                </span>
+    <div class="hero-glow"></div>
+
+    <!-- Apple-Style Navigation Bar -->
+    <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50 apple-glass rounded-full px-6 py-3.5 flex items-center justify-between shadow-2xl">
+        
+        <!-- Official Logo Brand -->
+        <a href="#home" class="flex items-center gap-3 group">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-black text-white text-base shadow-[0_0_15px_rgba(99,102,241,0.5)] group-hover:scale-105 transition-transform">
+                Z
             </div>
-            
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <a href="#home" class="hover:text-brandPurple transition-colors">Home</a>
-                <a href="#services" class="hover:text-brandPurple transition-colors">Services</a>
-                <a href="#portfolio" class="hover:text-brandPurple transition-colors">Portfolio</a>
-                <a href="#about" class="hover:text-brandPurple transition-colors">About Founder</a>
-                <a href="#contact" class="hover:text-brandPurple transition-colors">Contact</a>
-            </nav>
+            <div class="flex flex-col">
+                <span class="font-extrabold tracking-wider text-white text-base leading-none">
+                    ZIPPY <span class="text-indigo-400">WEB</span>
+                </span>
+                <span class="text-[9px] text-gray-400 tracking-widest uppercase font-semibold">Digital Agency</span>
+            </div>
+        </a>
 
-            <a href="#contact" class="glow-btn text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all">
-                Get a Free Quote
-            </a>
-        </div>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide text-gray-300">
+            <a href="#home" class="hover:text-white transition-colors">Overview</a>
+            <a href="#portfolio" class="hover:text-white transition-colors">Selected Work</a>
+            <a href="#services" class="hover:text-white transition-colors">Expertise</a>
+            <a href="#founder" class="hover:text-white transition-colors">Leadership</a>
+        </nav>
+
+        <!-- CTA Action Button -->
+        <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-btn font-bold px-5 py-2 rounded-full text-xs tracking-wide">
+            Start a Project
+        </a>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-36 pb-20 px-6 max-w-7xl mx-auto text-center flex flex-col items-center justify-center min-h-screen">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-brandPurple/30 text-xs text-brandPurple font-semibold mb-6">
-            <span class="w-2 h-2 rounded-full bg-brandPurple animate-pulse"></span>
-            Silicon Valley Grade Web Architecture
+    <section id="home" class="relative z-10 pt-44 pb-28 px-6 max-w-5xl mx-auto text-center flex flex-col items-center">
+        
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full apple-glass text-[11px] font-semibold text-indigo-300 mb-8 tracking-wide border border-indigo-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping"></span>
+            Silicon Valley Grade Web Systems
         </div>
-        
-        <h1 class="text-4xl md:text-7xl font-extrabold leading-tight mb-6 max-w-5xl">
-            We Build High-Converting, Modern <span class="text-gradient">Digital Experiences</span> for Global Brands.
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1] tracking-tight mb-8 apple-text-gradient">
+            We architect ultra-luxury digital platforms for global leaders.
         </h1>
-        
-        <p class="text-gray-400 text-base md:text-xl max-w-3xl mb-10 leading-relaxed">
-            Custom Web Development, AI-Powered Websites, & UI/UX Solutions Designed to Scale Your Business.
+
+        <p class="text-gray-400 text-base md:text-lg max-w-2xl font-normal leading-relaxed mb-10">
+            Engineered with high performance, interactive UI components, and instant conversion flows to position your business at the top.
         </p>
 
-        <div class="flex flex-col sm:flex-row items-center gap-4 mb-16">
-            <a href="#portfolio" class="glow-btn text-white px-8 py-4 rounded-full font-bold text-base transition-all w-full sm:w-auto">
-                View Our Work
+        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <a href="#portfolio" class="apple-btn font-bold px-8 py-3.5 rounded-full text-sm w-full sm:w-auto text-center">
+                Explore Selected Works
             </a>
-            <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="glass-card text-white px-8 py-4 rounded-full font-bold text-base hover:bg-white/10 transition-all w-full sm:w-auto border border-white/20">
-                Let's Talk (WhatsApp)
+            <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-glass text-white font-semibold px-8 py-3.5 rounded-full text-sm hover:bg-white/10 transition-all w-full sm:w-auto text-center">
+                WhatsApp Inquiry
             </a>
-        </div>
-
-        <!-- Trust Badges -->
-        <div class="pt-8 border-t border-white/10 w-full max-w-4xl flex flex-wrap justify-center items-center gap-8 text-gray-400 text-sm font-medium">
-            <div class="flex items-center gap-2">
-                <span class="text-brandPurple font-bold">✓</span> Trusted by 50+ Clients Worldwide
-            </div>
-            <div class="flex items-center gap-2">
-                <span class="text-brandBlue font-bold">★</span> 100% Client Satisfaction
-            </div>
         </div>
     </section>
 
-    <!-- Featured Portfolio -->
-    <section id="portfolio" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-xs uppercase tracking-widest text-brandPurple font-bold mb-3">Live Works Showcase</h2>
-            <h3 class="text-3xl md:text-5xl font-extrabold">Featured Projects</h3>
+    <!-- Apple-Style Portfolio Showcase -->
+    <section id="portfolio" class="relative z-10 py-24 px-6 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Selected Cases</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-2">Crafted for Conversion</h2>
+            </div>
+            <p class="text-gray-400 text-xs md:text-sm max-w-md">Explore our live, functional web platforms deployed for healthcare, dining, and enterprise clients.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Project 1 -->
-            <div class="glass-card rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between">
+            
+            <!-- Showcase 1: Tatva -->
+            <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
-                    <span class="text-xs font-bold text-brandPurple uppercase tracking-wider">Healthcare & Medical</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Dr. Khan Mind Clinic</h4>
-                    <p class="text-gray-400 text-sm mb-6">Patient-centric health booking platform with modern scheduling flows.</p>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-indigo-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-xs font-mono text-indigo-300 bg-indigo-950/80 px-3 py-1.5 rounded-full border border-indigo-500/30">Live UI Engine</span>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Hospitality & Dining</span>
+                    <h3 class="text-2xl font-bold text-white mt-1 mb-2">Tatva Restaurant Pune</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Interactive digital menu engine with instant item discovery and mobile-first speed optimization.</p>
                 </div>
-                <a href="https://dr-khan-mind-clinic.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-brandBlue font-semibold hover:text-white transition-colors">
-                    Visit Live Experience →
+                <a href="https://tatva-pune-resturent.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-indigo-400 transition-colors">
+                    Launch Platform Preview →
                 </a>
             </div>
 
-            <!-- Project 2 -->
-            <div class="glass-card rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between">
+            <!-- Showcase 2: Dr. Khan -->
+            <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
-                    <span class="text-xs font-bold text-brandPurple uppercase tracking-wider">Premium Hospitality</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Tatva Pune Restaurant</h4>
-                    <p class="text-gray-400 text-sm mb-6">Ultra-fast digital menu & interactive dining web experience.</p>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-blue-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-xs font-mono text-blue-300 bg-blue-950/80 px-3 py-1.5 rounded-full border border-blue-500/30">Medical Portal UI</span>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-blue-400">Healthcare Platform</span>
+                    <h3 class="text-2xl font-bold text-white mt-1 mb-2">Dr. Khan Mind Clinic</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Patient-centric appointment workflow designed for seamless mental health consultations.</p>
                 </div>
-                <a href="https://tatva-pune-resturent.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-brandBlue font-semibold hover:text-white transition-colors">
-                    Visit Live Experience →
+                <a href="https://dr-khan-mind-clinic.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-blue-400 transition-colors">
+                    Launch Platform Preview →
                 </a>
             </div>
 
-            <!-- Project 3 -->
-            <div class="glass-card rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between">
+            <!-- Showcase 3: Barbeque Times -->
+            <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
-                    <span class="text-xs font-bold text-brandPurple uppercase tracking-wider">Dining & Food Chain</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">The Barbeque Times</h4>
-                    <p class="text-gray-400 text-sm mb-6">High-conversion buffet showcase and table booking layout.</p>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-purple-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-xs font-mono text-purple-300 bg-purple-950/80 px-3 py-1.5 rounded-full border border-purple-500/30">Buffet Showcase UI</span>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-purple-400">Culinary Chain</span>
+                    <h3 class="text-2xl font-bold text-white mt-1 mb-2">The Barbeque Times</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">Visual feast web application built to drive group dining reservations and banquet queries.</p>
                 </div>
-                <a href="https://the-barbeque-times.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-brandBlue font-semibold hover:text-white transition-colors">
-                    Visit Live Experience →
+                <a href="https://the-barbeque-times.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-purple-400 transition-colors">
+                    Launch Platform Preview →
                 </a>
             </div>
 
-            <!-- Project 4 -->
-            <div class="glass-card rounded-2xl p-8 transition-all duration-300 flex flex-col justify-between">
+            <!-- Showcase 4: Shree Sai -->
+            <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
-                    <span class="text-xs font-bold text-brandPurple uppercase tracking-wider">B2B Enterprise</span>
-                    <h4 class="text-2xl font-bold mt-2 mb-3">Shree Sai Enterprises</h4>
-                    <p class="text-gray-400 text-sm mb-6">Enterprise-grade corporate portfolio & business solution portal.</p>
+                    <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-emerald-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
+                        <span class="text-xs font-mono text-emerald-300 bg-emerald-950/80 px-3 py-1.5 rounded-full border border-emerald-500/30">B2B Portal UI</span>
+                    </div>
+                    <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400">Enterprise B2B</span>
+                    <h3 class="text-2xl font-bold text-white mt-1 mb-2">Shree Sai Enterprises</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-6">High-trust corporate infrastructure portal engineered for business queries and client onboarding.</p>
                 </div>
-                <a href="https://shree-sai-enterprises-orpin.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-brandBlue font-semibold hover:text-white transition-colors">
-                    Visit Live Experience →
+                <a href="https://shree-sai-enterprises-orpin.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    Launch Platform Preview →
                 </a>
             </div>
+
         </div>
     </section>
 
-    <!-- Services Offered -->
-    <section id="services" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-xs uppercase tracking-widest text-brandPurple font-bold mb-3">Our Core Expertise</h2>
-            <h3 class="text-3xl md:text-5xl font-extrabold">Services Designed to Scale</h3>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="glass-card p-6 rounded-xl">
-                <div class="text-3xl mb-4">⚡</div>
-                <h4 class="font-bold text-lg mb-2">Custom Web Dev</h4>
-                <p class="text-gray-400 text-sm">Blazing fast web apps built with React, Next.js & Tailwind CSS.</p>
-            </div>
-            <div class="glass-card p-6 rounded-xl">
-                <div class="text-3xl mb-4">🤖</div>
-                <h4 class="font-bold text-lg mb-2">AI Web Applications</h4>
-                <p class="text-gray-400 text-sm">Dynamic websites integrated with intelligent automation & flows.</p>
-            </div>
-            <div class="glass-card p-6 rounded-xl">
-                <div class="text-3xl mb-4">🎨</div>
-                <h4 class="font-bold text-lg mb-2">UI/UX Redesign</h4>
-                <p class="text-gray-400 text-sm">High-converting luxury interfaces that captivate high-ticket leads.</p>
-            </div>
-            <div class="glass-card p-6 rounded-xl">
-                <div class="text-3xl mb-4">🚀</div>
-                <h4 class="font-bold text-lg mb-2">E-Com & SEO</h4>
-                <p class="text-gray-400 text-sm">Engineered for search ranking and maximum visitor conversion.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Founder Section -->
-    <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
-        <div class="glass-card rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+    <!-- Leadership / Founder Section -->
+    <section id="founder" class="relative z-10 py-24 px-6 max-w-5xl mx-auto">
+        <div class="apple-glass-card rounded-3xl p-8 md:p-12 border border-white/10 flex flex-col md:flex-row items-center gap-12">
             <div class="w-full md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-80 rounded-2xl overflow-hidden border-2 border-brandPurple/50 shadow-[0_0_30px_rgba(99,102,241,0.3)]">
-                    <!-- Owner Image Placeholder -->
-                    <img src="/owner.jpg" alt="Founder" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'">
+                <div class="relative w-64 h-80 rounded-2xl overflow-hidden border border-indigo-500/30 shadow-[0_0_50px_rgba(99,102,241,0.25)]">
+                    <img src="/owner.jpg" alt="Founder Portrait" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
             <div class="w-full md:w-1/2">
-                <span class="text-xs font-bold text-brandPurple uppercase tracking-widest">Leadership</span>
-                <h3 class="text-3xl font-extrabold mt-2 mb-4">Meet the Visionary Behind Zippy Web</h3>
-                <p class="text-gray-300 text-sm leading-relaxed mb-6">
-                    "At Zippy Web, we don't just build websites; we engineer digital assets. Our focus is on delivering modern, fast, and high-converting websites for businesses across the globe."
+                <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Founder & Director</span>
+                <h3 class="text-3xl font-extrabold text-white mt-1 mb-4">Ravinder</h3>
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                    "We don't build generic websites. We build high-converting digital assets that establish immediate authority for our clients. Every platform we deliver is built to match global Silicon Valley standards."
                 </p>
-                <a href="https://x.com/ravinderrr_9" target="_blank" class="inline-flex items-center gap-2 text-brandPurple font-semibold hover:underline">
-                    Connect on Twitter/X (@ravinderrr_9) →
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Lead Capture -->
-    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="glass-card rounded-3xl p-8 md:p-12 text-center">
-            <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Start Your Next Project</h3>
-            <p class="text-gray-400 text-sm mb-8">Ready to elevate your brand's digital presence? Get in touch today.</p>
-
-            <form class="space-y-4 text-left mb-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="Your Name" class="w-full glass-card p-4 rounded-xl border border-white/10 focus:border-brandPurple outline-none text-sm">
-                    <input type="email" placeholder="Your Email" class="w-full glass-card p-4 rounded-xl border border-white/10 focus:border-brandPurple outline-none text-sm">
+                <div class="flex items-center gap-4">
+                    <a href="https://x.com/ravinderrr_9" target="_blank" class="text-xs font-semibold text-indigo-400 hover:text-white transition-colors">Twitter / X →</a>
+                    <a href="https://www.linkedin.com/in/zippy-web-9406723a8" target="_blank" class="text-xs font-semibold text-gray-400 hover:text-white transition-colors">LinkedIn Profile</a>
                 </div>
-                <input type="text" placeholder="Service Needed (e.g., Web Development)" class="w-full glass-card p-4 rounded-xl border border-white/10 focus:border-brandPurple outline-none text-sm">
-                <textarea rows="4" placeholder="Tell us about your project..." class="w-full glass-card p-4 rounded-xl border border-white/10 focus:border-brandPurple outline-none text-sm"></textarea>
-                <button type="button" class="w-full glow-btn py-4 rounded-xl font-bold text-sm">Submit Project Inquiry</button>
-            </form>
-
-            <div class="pt-6 border-t border-white/10">
-                <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="text-green-400 font-bold hover:underline inline-flex items-center gap-2">
-                    💬 Direct WhatsApp Instant Chat
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 border-t border-white/10 text-center text-xs text-gray-500">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="https://www.linkedin.com/in/zippy-web-9406723a8" target="_blank" class="hover:text-white">LinkedIn</a>
-            <a href="https://www.instagram.com/zippyweb9" target="_blank" class="hover:text-white">Instagram</a>
-            <a href="https://www.facebook.com/share/1973y4ZAeB/" target="_blank" class="hover:text-white">Facebook</a>
-            <a href="https://x.com/ravinderrr_9" target="_blank" class="hover:text-white">Twitter/X</a>
-        </div>
-        © 2026 Zippy Web Agency. Silicon Valley Grade Digital Development.
+    <footer class="relative z-10 py-12 border-t border-white/10 text-center text-xs text-gray-500">
+        <p>© 2026 Zippy Web Agency. Silicon Valley Grade Engineering.</p>
     </footer>
 
 </body>
