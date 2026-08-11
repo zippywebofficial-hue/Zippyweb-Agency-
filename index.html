@@ -9,7 +9,6 @@
     <style>
         body { background-color: #050508; color: #F3F4F6; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
         
-        /* Apple-Grade Glassmorphism */
         .apple-glass {
             background: rgba(18, 18, 26, 0.65);
             backdrop-filter: blur(25px);
@@ -30,7 +29,6 @@
             box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
         }
 
-        /* Gradient Glow Effects */
         .hero-glow {
             position: absolute;
             width: 600px;
@@ -60,16 +58,28 @@
             color: #FFFFFF;
             box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
         }
+
+        .social-pill {
+            background: #ffffff;
+            color: #111111;
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .social-pill:hover {
+            background: #6366f1;
+            color: #ffffff;
+            border-color: #6366f1;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="selection:bg-indigo-600 selection:text-white">
 
     <div class="hero-glow"></div>
 
-    <!-- Apple-Style Navigation Bar -->
+    <!-- Navigation Bar -->
     <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50 apple-glass rounded-full px-6 py-3.5 flex items-center justify-between shadow-2xl">
-        
-        <!-- Official Logo Brand -->
         <a href="#home" class="flex items-center gap-3 group">
             <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-black text-white text-base shadow-[0_0_15px_rgba(99,102,241,0.5)] group-hover:scale-105 transition-transform">
                 Z
@@ -82,15 +92,14 @@
             </div>
         </a>
 
-        <!-- Navigation Links -->
         <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide text-gray-300">
             <a href="#home" class="hover:text-white transition-colors">Overview</a>
-            <a href="#portfolio" class="hover:text-white transition-colors">Selected Work</a>
+            <a href="#portfolio" class="hover:text-white transition-colors">Cases</a>
+            <a href="#pricing" class="hover:text-white transition-colors">Pricing & Plans</a>
+            <a href="#students" class="hover:text-white transition-colors">Student Hub</a>
             <a href="#founder" class="hover:text-white transition-colors">Leadership</a>
-            <a href="#contact" class="hover:text-white transition-colors">Contact</a>
         </nav>
 
-        <!-- CTA Action Button -->
         <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-btn font-bold px-5 py-2 rounded-full text-xs tracking-wide">
             Start a Project
         </a>
@@ -98,7 +107,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative z-10 pt-44 pb-28 px-6 max-w-5xl mx-auto text-center flex flex-col items-center">
-        
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full apple-glass text-[11px] font-semibold text-indigo-300 mb-8 tracking-wide border border-indigo-500/20">
             <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping"></span>
             Silicon Valley Grade Web Systems
@@ -116,25 +124,25 @@
             <a href="#portfolio" class="apple-btn font-bold px-8 py-3.5 rounded-full text-sm w-full sm:w-auto text-center">
                 Explore Selected Works
             </a>
-            <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-glass text-white font-semibold px-8 py-3.5 rounded-full text-sm hover:bg-white/10 transition-all w-full sm:w-auto text-center">
-                WhatsApp Inquiry
+            <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-glass text-white font-semibold px-8 py-3.5 rounded-full text-sm hover:bg-white/10 transition-all w-full sm:w-auto text-center flex items-center justify-center gap-2">
+                <span>WhatsApp Inquiry</span>
             </a>
         </div>
     </section>
 
-    <!-- Apple-Style Portfolio Showcase -->
+    <!-- Selected Cases with Interactive Modals -->
     <section id="portfolio" class="relative z-10 py-24 px-6 max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
             <div>
-                <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Selected Cases</span>
+                <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Selected Cases & Proof</span>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-2">Crafted for Conversion</h2>
             </div>
-            <p class="text-gray-400 text-xs md:text-sm max-w-md">Explore our live, functional web platforms deployed for healthcare, dining, and enterprise clients.</p>
+            <p class="text-gray-400 text-xs md:text-sm max-w-md">Click any platform card to inspect key UI features, technology stack, and live preview links.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             
-            <!-- Showcase 1: Tatva -->
+            <!-- Case 1 -->
             <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
                     <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-indigo-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
@@ -144,12 +152,12 @@
                     <h3 class="text-2xl font-bold text-white mt-1 mb-2">Tatva Restaurant Pune</h3>
                     <p class="text-gray-400 text-xs leading-relaxed mb-6">Interactive digital menu engine with instant item discovery and mobile-first speed optimization.</p>
                 </div>
-                <a href="https://tatva-pune-resturent.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-indigo-400 transition-colors">
-                    Launch Platform Preview →
-                </a>
+                <button onclick="openModal('Tatva Restaurant Pune', 'Hospitality UI Engine', 'Features interactive menu filters, ultra-fast image loading, direct table reservation button, and glassmorphism design.', 'https://tatva-pune-resturent.vercel.app')" class="w-full bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white font-bold py-3 rounded-xl border border-indigo-500/30 transition-all text-xs">
+                    View Case Details & Demo →
+                </button>
             </div>
 
-            <!-- Showcase 2: Dr. Khan -->
+            <!-- Case 2 -->
             <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
                     <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-blue-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
@@ -159,12 +167,12 @@
                     <h3 class="text-2xl font-bold text-white mt-1 mb-2">Dr. Khan Mind Clinic</h3>
                     <p class="text-gray-400 text-xs leading-relaxed mb-6">Patient-centric appointment workflow designed for seamless mental health consultations.</p>
                 </div>
-                <a href="https://dr-khan-mind-clinic.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-blue-400 transition-colors">
-                    Launch Platform Preview →
-                </a>
+                <button onclick="openModal('Dr. Khan Mind Clinic', 'Healthcare Appointment Portal', 'Built for high trust, direct WhatsApp appointment routing, doctor profile showcase, and patient guidance section.', 'https://dr-khan-mind-clinic.vercel.app')" class="w-full bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white font-bold py-3 rounded-xl border border-blue-500/30 transition-all text-xs">
+                    View Case Details & Demo →
+                </button>
             </div>
 
-            <!-- Showcase 3: Barbeque Times -->
+            <!-- Case 3 -->
             <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
                     <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-purple-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
@@ -174,12 +182,12 @@
                     <h3 class="text-2xl font-bold text-white mt-1 mb-2">The Barbeque Times</h3>
                     <p class="text-gray-400 text-xs leading-relaxed mb-6">Visual feast web application built to drive group dining reservations and banquet queries.</p>
                 </div>
-                <a href="https://the-barbeque-times.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-purple-400 transition-colors">
-                    Launch Platform Preview →
-                </a>
+                <button onclick="openModal('The Barbeque Times', 'Luxury Culinary Showcase', 'High-impact visual layout, dish discovery grids, corporate booking forms, and instant location routing.', 'https://the-barbeque-times.vercel.app')" class="w-full bg-purple-600/20 hover:bg-purple-600 text-purple-300 hover:text-white font-bold py-3 rounded-xl border border-purple-500/30 transition-all text-xs">
+                    View Case Details & Demo →
+                </button>
             </div>
 
-            <!-- Showcase 4: Shree Sai -->
+            <!-- Case 4 -->
             <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                 <div>
                     <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-emerald-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
@@ -189,11 +197,102 @@
                     <h3 class="text-2xl font-bold text-white mt-1 mb-2">Shree Sai Enterprises</h3>
                     <p class="text-gray-400 text-xs leading-relaxed mb-6">High-trust corporate infrastructure portal engineered for business queries and client onboarding.</p>
                 </div>
-                <a href="https://shree-sai-enterprises-orpin.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold text-white group-hover:text-emerald-400 transition-colors">
-                    Launch Platform Preview →
+                <button onclick="openModal('Shree Sai Enterprises', 'B2B Corporate Infrastructure', 'Corporate branding, product catalog showcase, high-conversion lead generation form, and B2B inquiry system.', 'https://shree-sai-enterprises-orpin.vercel.app')" class="w-full bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white font-bold py-3 rounded-xl border border-emerald-500/30 transition-all text-xs">
+                    View Case Details & Demo →
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pricing & Tier Options (Based on Budget) -->
+    <section id="pricing" class="relative z-10 py-24 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Flexible Options</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-2">Select Your Package Tier</h2>
+            <p class="text-gray-400 text-xs md:text-sm mt-3">Choose the design style and budget that fits your exact growth requirement.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Tier 1 -->
+            <div class="apple-glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Starter Business</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">Essential Web</h3>
+                    <p class="text-gray-400 text-xs mb-6">Perfect for small businesses needing a clean, fast-loading digital presence.</p>
+                    <ul class="text-xs text-gray-300 space-y-3 mb-8">
+                        <li class="flex items-center gap-2">✓ 1-3 Custom High-Speed Pages</li>
+                        <li class="flex items-center gap-2">✓ Mobile Responsive Design</li>
+                        <li class="flex items-center gap-2">✓ Direct WhatsApp Integration</li>
+                        <li class="flex items-center gap-2">✓ SSL & Basic SEO Setup</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20am%20interested%20in%20the%20Starter%20Package" target="_blank" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all text-xs">
+                    Choose Starter Tier
                 </a>
             </div>
 
+            <!-- Tier 2 -->
+            <div class="apple-glass-card rounded-3xl p-8 border border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col justify-between relative">
+                <span class="absolute -top-3 right-6 bg-indigo-600 text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full">Most Popular</span>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">High Conversion</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">Silicon Valley Luxury</h3>
+                    <p class="text-gray-400 text-xs mb-6">Designed for brands wanting Apple-grade UI animations and maximum trust.</p>
+                    <ul class="text-xs text-gray-300 space-y-3 mb-8">
+                        <li class="flex items-center gap-2">✓ Apple Glassmorphism UI/UX</li>
+                        <li class="flex items-center gap-2">✓ Up to 6 Custom Interactive Pages</li>
+                        <li class="flex items-center gap-2">✓ Fast Vercel Cloud Deployment</li>
+                        <li class="flex items-center gap-2">✓ Domain Setup & Complete SEO</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20am%20interested%20in%20the%20Silicon%20Valley%20Package" target="_blank" class="w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all text-xs shadow-lg shadow-indigo-600/30">
+                    Choose Luxury Tier
+                </a>
+            </div>
+
+            <!-- Tier 3 -->
+            <div class="apple-glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-purple-400">Custom Engineering</span>
+                    <h3 class="text-2xl font-bold text-white mt-2 mb-4">Enterprise Custom</h3>
+                    <p class="text-gray-400 text-xs mb-6">For scale-ups requiring advanced features, portals, and custom backend systems.</p>
+                    <ul class="text-xs text-gray-300 space-y-3 mb-8">
+                        <li class="flex items-center gap-2">✓ Unlimited Custom Pages</li>
+                        <li class="flex items-center gap-2">✓ Custom Web App & AI Engines</li>
+                        <li class="flex items-center gap-2">✓ Dedicated Ongoing Maintenance</li>
+                        <li class="flex items-center gap-2">✓ VIP Priority Consultation</li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20need%20a%20Custom%20Enterprise%20Website" target="_blank" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all text-xs">
+                    Get Custom Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student & Creator Opportunity Hub -->
+    <section id="students" class="relative z-10 py-24 px-6 max-w-6xl mx-auto border-t border-white/10">
+        <div class="apple-glass-card rounded-3xl p-8 md:p-12 border border-indigo-500/30 bg-gradient-to-br from-indigo-950/20 via-black to-slate-950/40">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="max-w-xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Student & Creator Network</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mt-2 mb-4">Learn Modern Web Development & Earn With Us</h2>
+                    <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                        Are you a student looking to master AI tools, modern web design, and high-ticket client acquisition? Connect with Zippy Web to access step-by-step guidance and work on real live projects.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/20 text-[11px] font-semibold">1-on-1 Mentorship</span>
+                        <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 text-[11px] font-semibold">Client Project Referral Earnings</span>
+                        <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 text-[11px] font-semibold">Real AI Workflow Training</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20Ravinder,%20I%20am%20a%20student%20and%20want%20to%20connect!" target="_blank" class="apple-btn font-bold px-8 py-4 rounded-2xl text-xs tracking-wider uppercase inline-block whitespace-nowrap shadow-xl">
+                        Join Student Network →
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -219,34 +318,36 @@
         </div>
     </section>
 
-    <!-- Clay Global Style "Let's Talk" High-Contrast Footer Section -->
+    <!-- Clay Global Style High-Contrast Footer Section -->
     <footer id="contact" class="relative z-10 bg-[#EFEFEF] text-[#111111] pt-20 pb-12 px-6 mt-20 border-t border-gray-300">
         <div class="max-w-6xl mx-auto">
             
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-                
-                <!-- Left Block: Let's Talk & Direct Direct Info -->
                 <div class="lg:col-span-5 flex flex-col justify-between">
                     <div>
                         <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight text-black mb-6">
                             Let’s Talk
                         </h2>
-                        <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="text-lg md:text-2xl font-bold underline text-indigo-600 hover:text-black transition-colors block mb-3">
-                            Start WhatsApp Project Chat →
+                        
+                        <!-- Premium Action Button -->
+                        <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-8 py-4 rounded-full text-sm shadow-xl transition-all transform hover:-translate-y-1 mb-6">
+                            <span>Start WhatsApp Project Chat</span>
+                            <span class="text-lg">→</span>
                         </a>
-                        <p class="text-sm font-semibold text-gray-600">
-                            Available globally for High-Ticket Web Engineering.
+
+                        <p class="text-xs font-semibold text-gray-600">
+                            Available globally for High-Ticket Web Systems & Custom Engineering.
                         </p>
                     </div>
                 </div>
 
-                <!-- Right Block: Navigation Links Column -->
                 <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 text-sm font-medium">
                     <div class="flex flex-col gap-3">
                         <span class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Company</span>
                         <a href="#home" class="text-gray-800 hover:text-black transition-colors">Overview</a>
                         <a href="#portfolio" class="text-gray-800 hover:text-black transition-colors">Selected Work</a>
-                        <a href="#founder" class="text-gray-800 hover:text-black transition-colors">Leadership</a>
+                        <a href="#pricing" class="text-gray-800 hover:text-black transition-colors">Pricing Options</a>
+                        <a href="#students" class="text-gray-800 hover:text-black transition-colors">Student Network</a>
                     </div>
 
                     <div class="flex flex-col gap-3">
@@ -257,25 +358,34 @@
                     </div>
 
                     <div class="flex flex-col gap-3">
-                        <span class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Connect</span>
+                        <span class="text-xs uppercase tracking-widest text-gray-400 font-bold mb-1">Follow Us</span>
                         <a href="https://x.com/ravinderrr_9" target="_blank" class="text-gray-800 hover:text-black transition-colors">Twitter / X</a>
                         <a href="https://www.linkedin.com/in/zippy-web-9406723a8" target="_blank" class="text-gray-800 hover:text-black transition-colors">LinkedIn</a>
                         <a href="https://www.instagram.com/zippyweb9" target="_blank" class="text-gray-800 hover:text-black transition-colors">Instagram</a>
                         <a href="https://www.facebook.com/share/1973y4ZAeB/" target="_blank" class="text-gray-800 hover:text-black transition-colors">Facebook</a>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Bottom Divider & Social Icons -->
+            <!-- Social Media Buttons Row -->
             <div class="pt-8 border-t border-gray-300 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500 font-medium">
                 
-                <!-- Social Links Bar -->
-                <div class="flex items-center gap-6 text-gray-700 font-bold">
-                    <a href="https://x.com/ravinderrr_9" target="_blank" class="hover:text-black transition-colors">𝕏</a>
-                    <a href="https://www.linkedin.com/in/zippy-web-9406723a8" target="_blank" class="hover:text-black transition-colors">LinkedIn</a>
-                    <a href="https://www.instagram.com/zippyweb9" target="_blank" class="hover:text-black transition-colors">Instagram</a>
-                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="hover:text-black transition-colors">WhatsApp</a>
+                <div class="flex flex-wrap items-center gap-3">
+                    <a href="https://x.com/ravinderrr_9" target="_blank" class="social-pill px-4 py-2 rounded-full font-bold text-xs shadow-sm flex items-center gap-2">
+                        <span>𝕏</span> Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/in/zippy-web-9406723a8" target="_blank" class="social-pill px-4 py-2 rounded-full font-bold text-xs shadow-sm flex items-center gap-2">
+                        <span>in</span> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/zippyweb9" target="_blank" class="social-pill px-4 py-2 rounded-full font-bold text-xs shadow-sm flex items-center gap-2">
+                        <span>📷</span> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/share/1973y4ZAeB/" target="_blank" class="social-pill px-4 py-2 rounded-full font-bold text-xs shadow-sm flex items-center gap-2">
+                        <span>f</span> Facebook
+                    </a>
+                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="social-pill px-4 py-2 rounded-full font-bold text-xs shadow-sm flex items-center gap-2">
+                        <span>💬</span> WhatsApp
+                    </a>
                 </div>
 
                 <div class="flex items-center gap-6">
@@ -288,6 +398,35 @@
 
         </div>
     </footer>
+
+    <!-- Interactive Case Modal Container -->
+    <div id="caseModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="apple-glass-card max-w-lg w-full rounded-3xl p-8 border border-white/20 relative animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
+            <span id="modalCategory" class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Category</span>
+            <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-1 mb-4">Project Title</h3>
+            <p id="modalDesc" class="text-gray-300 text-xs leading-relaxed mb-6">Description goes here...</p>
+            <div class="flex items-center gap-4">
+                <a id="modalLink" href="#" target="_blank" class="apple-btn font-bold px-6 py-3 rounded-xl text-xs w-full text-center">
+                    Launch Live Website Preview →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, category, desc, link) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalCategory').innerText = category;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalLink').href = link;
+            document.getElementById('caseModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('caseModal').classList.add('hidden');
+        }
+    </script>
 
 </body>
 </html>
