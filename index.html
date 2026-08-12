@@ -89,6 +89,14 @@
             border-color: #6366f1;
             transform: translateY(-2px);
         }
+
+        .float-wa {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
     </style>
 </head>
 <body class="selection:bg-indigo-600 selection:text-white relative">
@@ -96,6 +104,14 @@
     <!-- Technical Ambient Mesh Background -->
     <div class="fixed inset-0 tech-bg-overlay pointer-events-none opacity-40 z-0"></div>
     <div class="hero-glow"></div>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20Zippy%20Web%20Agency,%20I%20visited%20your%20website%20and%20want%20a%20free%20demo%20for%20my%20business!" target="_blank" class="float-wa bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-full flex items-center justify-center transition-all hover:scale-110 group" title="Chat on WhatsApp">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out text-xs font-bold pl-0 group-hover:pl-2">Chat with Us</span>
+    </a>
 
     <!-- Navigation Bar -->
     <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50 apple-glass rounded-full px-6 py-3.5 flex items-center justify-between shadow-2xl">
@@ -120,9 +136,9 @@
             <a href="#founder" class="hover:text-white transition-colors">Leadership</a>
         </nav>
 
-        <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-btn font-bold px-5 py-2 rounded-full text-xs tracking-wide">
-            Start a Project
-        </a>
+        <button onclick="openLeadModal()" class="apple-btn font-bold px-5 py-2 rounded-full text-xs tracking-wide">
+            Book Free Mockup
+        </button>
     </header>
 
     <!-- Hero Section -->
@@ -141,9 +157,9 @@
         </p>
 
         <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-            <a href="#portfolio" class="apple-btn font-bold px-8 py-3.5 rounded-full text-sm w-full sm:w-auto text-center">
-                Explore Selected Works
-            </a>
+            <button onclick="openLeadModal()" class="apple-btn font-bold px-8 py-3.5 rounded-full text-sm w-full sm:w-auto text-center">
+                Get Free Custom Mockup
+            </button>
             <a href="https://wa.me/qr/KRZ5CPRYXSSZM1" target="_blank" class="apple-glass text-white font-semibold px-8 py-3.5 rounded-full text-sm hover:bg-white/10 transition-all w-full sm:w-auto text-center flex items-center justify-center gap-2">
                 <span>WhatsApp Inquiry</span>
             </a>
@@ -217,9 +233,9 @@
                 <p class="text-[11px] text-gray-400">Premium visual aesthetics</p>
             </div>
             <div class="apple-glass-card rounded-2xl p-6 text-center border border-white/10">
-                <div class="text-2xl font-black text-emerald-400 mb-2">SEO Pro</div>
-                <h4 class="text-sm font-bold text-white mb-1">Schema & Meta</h4>
-                <p class="text-[11px] text-gray-400">Top Google ranking structure</p>
+                <div class="text-2xl font-black text-emerald-400 mb-2">GMB Ready</div>
+                <h4 class="text-sm font-bold text-white mb-1">Google Business</h4>
+                <p class="text-[11px] text-gray-400">Local Maps & Search indexing</p>
             </div>
         </div>
     </section>
@@ -385,6 +401,24 @@
         </div>
     </section>
 
+    <!-- Google My Business & Local Presence Card -->
+    <section class="relative z-10 py-12 px-6 max-w-5xl mx-auto">
+        <div class="apple-glass-card rounded-2xl p-6 border border-indigo-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-2xl">
+                    📍
+                </div>
+                <div>
+                    <h4 class="text-base font-bold text-white">Google My Business Verified Entity</h4>
+                    <p class="text-xs text-gray-400">Zippy Web Agency • Local Business Presence & Search Engine Indexing</p>
+                </div>
+            </div>
+            <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20want%20to%20verify%20GMB%20location" target="_blank" class="text-xs font-bold text-indigo-300 hover:text-white border border-indigo-500/30 px-4 py-2 rounded-xl bg-indigo-950/40 hover:bg-indigo-900/60 transition-all">
+                Search Local Presence →
+            </a>
+        </div>
+    </section>
+
     <!-- Leadership / Founder Section -->
     <section id="founder" class="relative z-10 py-24 px-6 max-w-5xl mx-auto border-t border-white/10">
         <div class="apple-glass-card rounded-3xl p-8 md:p-12 border border-white/10 flex flex-col md:flex-row items-center gap-12">
@@ -480,7 +514,7 @@
         </div>
     </footer>
 
-    <!-- Interactive Case Modal -->
+    <!-- Interactive Case Details Modal -->
     <div id="caseModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="apple-glass-card max-w-lg w-full rounded-3xl p-8 border border-white/20 relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
@@ -490,6 +524,25 @@
             <a id="modalLink" href="#" target="_blank" class="apple-btn font-bold px-6 py-3 rounded-xl text-xs w-full text-center block">
                 Launch Live Website Preview →
             </a>
+        </div>
+    </div>
+
+    <!-- Lead Capture Modal (Free Custom Mockup) -->
+    <div id="leadModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="apple-glass-card max-w-md w-full rounded-3xl p-8 border border-indigo-500/40 relative">
+            <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
+            <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Zero Investment Offer</span>
+            <h3 class="text-2xl font-extrabold text-white mt-1 mb-2">Get Free Custom Mockup</h3>
+            <p class="text-gray-400 text-xs leading-relaxed mb-6">Enter your business details below. We will design a free 1-page website UI for your brand before you pay anything!</p>
+            
+            <form onsubmit="handleLeadSubmit(event)" class="space-y-4">
+                <input type="text" id="leadName" placeholder="Your Name" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500">
+                <input type="text" id="leadBusiness" placeholder="Business Name (e.g. Royal Cafe)" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500">
+                <input type="tel" id="leadPhone" placeholder="WhatsApp / Phone Number" required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500">
+                <button type="submit" class="apple-btn font-bold px-6 py-3 rounded-xl text-xs w-full text-center block">
+                    Claim Free Mockup Design →
+                </button>
+            </form>
         </div>
     </div>
 
@@ -504,6 +557,24 @@
 
         function closeModal() {
             document.getElementById('caseModal').classList.add('hidden');
+        }
+
+        function openLeadModal() {
+            document.getElementById('leadModal').classList.remove('hidden');
+        }
+
+        function closeLeadModal() {
+            document.getElementById('leadModal').classList.add('hidden');
+        }
+
+        function handleLeadSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('leadName').value;
+            const business = document.getElementById('leadBusiness').value;
+            const phone = document.getElementById('leadPhone').value;
+            const text = encodeURIComponent(`Hi Rahul! I want a FREE Mockup for my business.\nName: ${name}\nBusiness: ${business}\nPhone: ${phone}`);
+            window.open(`https://wa.me/qr/KRZ5CPRYXSSZM1?text=${text}`, '_blank');
+            closeLeadModal();
         }
 
         function handleFeedbackSubmit(e) {
