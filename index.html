@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zippy Web Agency | Next-Gen Digital Engineering</title>
     
-    <!-- FAVICON (Browser Tab Logo) -->
     <link rel="icon" type="image/png" href="logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,12 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Three.js Libraries for WebGL 3D Rendering -->
+    <!-- Three.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <style>
         body { 
-            background-color: #030305; 
+            background-color: #030307; 
             color: #F3F4F6; 
             font-family: 'Inter', sans-serif; 
             overflow-x: hidden; 
@@ -28,7 +27,6 @@
             font-family: 'Sora', sans-serif;
         }
 
-        /* 3D Canvas Background Styling */
         #webgl-canvas {
             position: fixed;
             top: 0;
@@ -39,37 +37,36 @@
             pointer-events: none;
         }
 
-        .tech-bg-overlay {
-            background-image: radial-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 0);
-            background-size: 32px 32px;
-        }
-        
+        /* Ultra-Transparent Apple Glassmorphism */
         .apple-glass {
-            background: rgba(15, 15, 23, 0.7);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
         
         .apple-glass-card {
-            background: rgba(15, 15, 23, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform-style: preserve-3d;
         }
 
         .apple-glass-card:hover {
-            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-6px) scale(1.01);
             border-color: rgba(99, 102, 241, 0.4);
-            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25);
+            box-shadow: 0 20px 50px -10px rgba(99, 102, 241, 0.3);
         }
 
         .hero-glow {
             position: absolute;
-            width: 700px;
-            height: 700px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(59, 130, 246, 0.05) 50%, transparent 70%);
-            top: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.25) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 70%);
+            top: -100px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
@@ -77,7 +74,7 @@
         }
 
         .apple-text-gradient {
-            background: linear-gradient(135deg, #FFFFFF 0%, #C7D2FE 40%, #6366F1 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #E0E7FF 40%, #818CF8 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -91,11 +88,11 @@
         .apple-btn:hover {
             background: #6366F1;
             color: #FFFFFF;
-            box-shadow: 0 0 25px rgba(99, 102, 241, 0.6);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.8);
         }
 
         .social-pill {
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.9);
             color: #111111;
             border: 1px solid #e5e7eb;
             transition: all 0.3s ease;
@@ -124,10 +121,7 @@
 </head>
 <body class="selection:bg-indigo-600 selection:text-white relative">
 
-    <!-- 3D WebGL Background Engine -->
     <canvas id="webgl-canvas"></canvas>
-
-    <div class="fixed inset-0 tech-bg-overlay pointer-events-none opacity-40 z-2"></div>
     <div class="hero-glow"></div>
 
     <!-- Floating WhatsApp Widget -->
@@ -139,10 +133,10 @@
     </a>
 
     <div class="content-layer">
-        <!-- Navigation Bar -->
+        <!-- Navigation -->
         <header class="fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-6xl z-50 apple-glass rounded-full px-6 py-3.5 flex items-center justify-between shadow-2xl">
             <a href="#home" class="flex items-center gap-3 group">
-                <img src="logo.png" alt="Zippy Web Agency Logo" class="h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                <img src="logo.png" alt="Zippy Web Logo" class="h-9 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
             </a>
 
             <nav class="hidden md:flex items-center gap-8 text-xs font-medium tracking-wide text-gray-300">
@@ -161,7 +155,7 @@
 
         <!-- Hero Section -->
         <section id="home" class="relative z-10 pt-44 pb-24 px-6 max-w-5xl mx-auto text-center flex flex-col items-center">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full apple-glass text-[11px] font-semibold text-indigo-300 mb-8 tracking-wide border border-indigo-500/20">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full apple-glass text-[11px] font-semibold text-indigo-300 mb-8 tracking-wide">
                 <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-ping"></span>
                 Silicon Valley Grade Web Systems • UP-95 Standard
             </div>
@@ -184,20 +178,20 @@
             </div>
         </section>
 
-        <!-- About Agency Section -->
+        <!-- About Section -->
         <section id="about" class="relative z-10 py-20 px-6 max-w-6xl mx-auto border-t border-white/10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">About Zippy Web</span>
                     <h2 class="text-3xl md:text-5xl font-extrabold text-white mt-2 mb-6">High-Performance Web Engineering</h2>
                     <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-4">
-                        Zippy Web is a elite web agency operating out of Mahoba, UP-95, serving businesses and ambitious founders worldwide. We bridge the gap between traditional web design and high-converting Silicon Valley tech architecture.
+                        Zippy Web is an elite web agency operating out of Mahoba, UP-95, serving businesses and ambitious founders worldwide. We bridge the gap between traditional web design and high-converting Silicon Valley tech architecture.
                     </p>
                     <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
                         We specialize in glassmorphic UI engines, sub-second page loads, conversion-optimized user journeys, and robust cloud infrastructure on Vercel Edge networks.
                     </p>
                 </div>
-                <div class="apple-glass-card rounded-3xl p-8 border border-white/10">
+                <div class="apple-glass-card rounded-3xl p-8">
                     <h3 class="text-xl font-bold text-white mb-4">Why Choose Our Digital Architecture?</h3>
                     <div class="space-y-4 text-xs text-gray-300">
                         <div class="flex items-start gap-3">
@@ -226,7 +220,7 @@
             </div>
         </section>
 
-        <!-- Tech Stack & Benefits Section -->
+        <!-- Tech Stack -->
         <section id="tech" class="relative z-10 py-20 px-6 max-w-6xl mx-auto border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Technology Engine</span>
@@ -235,22 +229,22 @@
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="apple-glass-card rounded-2xl p-6 text-center border border-white/10">
+                <div class="apple-glass-card rounded-2xl p-6 text-center">
                     <div class="text-2xl font-black text-indigo-400 mb-2">Tailwind</div>
                     <h4 class="text-sm font-bold text-white mb-1">Tailwind CSS 3</h4>
                     <p class="text-[11px] text-gray-400">Ultra-light utility styling</p>
                 </div>
-                <div class="apple-glass-card rounded-2xl p-6 text-center border border-white/10">
+                <div class="apple-glass-card rounded-2xl p-6 text-center">
                     <div class="text-2xl font-black text-blue-400 mb-2">Vercel</div>
                     <h4 class="text-sm font-bold text-white mb-1">Vercel Edge</h4>
                     <p class="text-[11px] text-gray-400">Global CDN deployment</p>
                 </div>
-                <div class="apple-glass-card rounded-2xl p-6 text-center border border-white/10">
+                <div class="apple-glass-card rounded-2xl p-6 text-center">
                     <div class="text-2xl font-black text-purple-400 mb-2">Glass UI</div>
                     <h4 class="text-sm font-bold text-white mb-1">Apple Glassmorphism</h4>
                     <p class="text-[11px] text-gray-400">Premium visual aesthetics</p>
                 </div>
-                <div class="apple-glass-card rounded-2xl p-6 text-center border border-white/10">
+                <div class="apple-glass-card rounded-2xl p-6 text-center">
                     <div class="text-2xl font-black text-emerald-400 mb-2">GMB Ready</div>
                     <h4 class="text-sm font-bold text-white mb-1">Google Business</h4>
                     <p class="text-[11px] text-gray-400">Local Maps & Search indexing</p>
@@ -258,7 +252,7 @@
             </div>
         </section>
 
-        <!-- Selected Cases with Interactive Modals -->
+        <!-- Cases -->
         <section id="portfolio" class="relative z-10 py-24 px-6 max-w-6xl mx-auto border-t border-white/10">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
                 <div>
@@ -270,62 +264,58 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
-                <!-- Case 1 -->
                 <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                     <div>
-                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-indigo-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
-                            <span class="text-xs font-mono text-indigo-300 bg-indigo-950/80 px-3 py-1.5 rounded-full border border-indigo-500/30">Live UI Engine</span>
+                        <div class="w-full h-48 rounded-2xl bg-indigo-950/30 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden backdrop-blur-md">
+                            <span class="text-xs font-mono text-indigo-300 bg-indigo-900/40 px-3 py-1.5 rounded-full border border-indigo-500/30">Live UI Engine</span>
                         </div>
                         <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Hospitality & Dining</span>
                         <h3 class="text-2xl font-bold text-white mt-1 mb-2">Tatva Restaurant Pune</h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">Interactive digital menu engine with instant item discovery and mobile-first speed optimization.</p>
                     </div>
-                    <button onclick="openModal('Tatva Restaurant Pune', 'Hospitality UI Engine', 'Features interactive menu filters, ultra-fast image loading, direct table reservation button, and glassmorphism design.', 'https://tatva-pune-resturent.vercel.app')" class="w-full bg-indigo-600/20 hover:bg-indigo-600 text-indigo-300 hover:text-white font-bold py-3 rounded-xl border border-indigo-500/30 transition-all text-xs">
+                    <button onclick="openModal('Tatva Restaurant Pune', 'Hospitality UI Engine', 'Features interactive menu filters, ultra-fast image loading, direct table reservation button, and glassmorphism design.', 'https://tatva-pune-resturent.vercel.app')" class="w-full bg-indigo-600/30 hover:bg-indigo-600 text-indigo-200 hover:text-white font-bold py-3 rounded-xl border border-indigo-500/40 transition-all text-xs">
                         View Case Details & Demo →
                     </button>
                 </div>
 
-                <!-- Case 2 -->
                 <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                     <div>
-                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-blue-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
-                            <span class="text-xs font-mono text-blue-300 bg-blue-950/80 px-3 py-1.5 rounded-full border border-blue-500/30">Medical Portal UI</span>
+                        <div class="w-full h-48 rounded-2xl bg-blue-950/30 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden backdrop-blur-md">
+                            <span class="text-xs font-mono text-blue-300 bg-blue-900/40 px-3 py-1.5 rounded-full border border-blue-500/30">Medical Portal UI</span>
                         </div>
                         <span class="text-[10px] uppercase font-bold tracking-widest text-blue-400">Healthcare Platform</span>
                         <h3 class="text-2xl font-bold text-white mt-1 mb-2">Dr. Khan Mind Clinic</h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">Patient-centric appointment workflow designed for seamless mental health consultations.</p>
                     </div>
-                    <button onclick="openModal('Dr. Khan Mind Clinic', 'Healthcare Appointment Portal', 'Built for high trust, direct WhatsApp appointment routing, doctor profile showcase, and patient guidance section.', 'https://dr-khan-mind-clinic.vercel.app')" class="w-full bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white font-bold py-3 rounded-xl border border-blue-500/30 transition-all text-xs">
+                    <button onclick="openModal('Dr. Khan Mind Clinic', 'Healthcare Appointment Portal', 'Built for high trust, direct WhatsApp appointment routing, doctor profile showcase, and patient guidance section.', 'https://dr-khan-mind-clinic.vercel.app')" class="w-full bg-blue-600/30 hover:bg-blue-600 text-blue-200 hover:text-white font-bold py-3 rounded-xl border border-blue-500/40 transition-all text-xs">
                         View Case Details & Demo →
                     </button>
                 </div>
 
-                <!-- Case 3 -->
                 <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                     <div>
-                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-purple-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
-                            <span class="text-xs font-mono text-purple-300 bg-purple-950/80 px-3 py-1.5 rounded-full border border-purple-500/30">Buffet Showcase UI</span>
+                        <div class="w-full h-48 rounded-2xl bg-purple-950/30 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden backdrop-blur-md">
+                            <span class="text-xs font-mono text-purple-300 bg-purple-900/40 px-3 py-1.5 rounded-full border border-purple-500/30">Buffet Showcase UI</span>
                         </div>
                         <span class="text-[10px] uppercase font-bold tracking-widest text-purple-400">Culinary Chain</span>
                         <h3 class="text-2xl font-bold text-white mt-1 mb-2">The Barbeque Times</h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">Visual feast web application built to drive group dining reservations and banquet queries.</p>
                     </div>
-                    <button onclick="openModal('The Barbeque Times', 'Luxury Culinary Showcase', 'High-impact visual layout, dish discovery grids, corporate booking forms, and instant location routing.', 'https://the-barbeque-times.vercel.app')" class="w-full bg-purple-600/20 hover:bg-purple-600 text-purple-300 hover:text-white font-bold py-3 rounded-xl border border-purple-500/30 transition-all text-xs">
+                    <button onclick="openModal('The Barbeque Times', 'Luxury Culinary Showcase', 'High-impact visual layout, dish discovery grids, corporate booking forms, and instant location routing.', 'https://the-barbeque-times.vercel.app')" class="w-full bg-purple-600/30 hover:bg-purple-600 text-purple-200 hover:text-white font-bold py-3 rounded-xl border border-purple-500/40 transition-all text-xs">
                         View Case Details & Demo →
                     </button>
                 </div>
 
-                <!-- Case 4 -->
                 <div class="apple-glass-card rounded-3xl p-6 md:p-8 flex flex-col justify-between group">
                     <div>
-                        <div class="w-full h-48 rounded-2xl bg-gradient-to-br from-emerald-900/40 to-slate-900/80 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden">
-                            <span class="text-xs font-mono text-emerald-300 bg-emerald-950/80 px-3 py-1.5 rounded-full border border-emerald-500/30">B2B Portal UI</span>
+                        <div class="w-full h-48 rounded-2xl bg-emerald-950/30 mb-6 border border-white/10 flex items-center justify-center relative overflow-hidden backdrop-blur-md">
+                            <span class="text-xs font-mono text-emerald-300 bg-emerald-900/40 px-3 py-1.5 rounded-full border border-emerald-500/30">B2B Portal UI</span>
                         </div>
                         <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400">Enterprise B2B</span>
                         <h3 class="text-2xl font-bold text-white mt-1 mb-2">Shree Sai Enterprises</h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">High-trust corporate infrastructure portal engineered for business queries and client onboarding.</p>
                     </div>
-                    <button onclick="openModal('Shree Sai Enterprises', 'B2B Corporate Infrastructure', 'Corporate branding, product catalog showcase, high-conversion lead generation form, and B2B inquiry system.', 'https://shree-sai-enterprises-orpin.vercel.app')" class="w-full bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white font-bold py-3 rounded-xl border border-emerald-500/30 transition-all text-xs">
+                    <button onclick="openModal('Shree Sai Enterprises', 'B2B Corporate Infrastructure', 'Corporate branding, product catalog showcase, high-conversion lead generation form, and B2B inquiry system.', 'https://shree-sai-enterprises-orpin.vercel.app')" class="w-full bg-emerald-600/30 hover:bg-emerald-600 text-emerald-200 hover:text-white font-bold py-3 rounded-xl border border-emerald-500/40 transition-all text-xs">
                         View Case Details & Demo →
                     </button>
                 </div>
@@ -333,7 +323,7 @@
             </div>
         </section>
 
-        <!-- Pricing Options Section -->
+        <!-- Pricing -->
         <section id="pricing" class="relative z-10 py-24 px-6 max-w-6xl mx-auto border-t border-white/10">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold">Flexible Packages</span>
@@ -342,7 +332,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="apple-glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+                <div class="apple-glass-card rounded-3xl p-8 flex flex-col justify-between">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Starter Business</span>
                         <h3 class="text-2xl font-bold text-white mt-2 mb-4">Essential Web</h3>
@@ -354,12 +344,12 @@
                             <li>✓ SSL & Basic SEO Setup</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20am%20interested%20in%20the%20Starter%20Package" target="_blank" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all text-xs">
+                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20am%20interested%20in%20the%20Starter%20Package" target="_blank" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all text-xs border border-white/10">
                         Choose Starter Tier
                     </a>
                 </div>
 
-                <div class="apple-glass-card rounded-3xl p-8 border border-indigo-500/50 shadow-[0_0_30px_rgba(99,102,241,0.2)] flex flex-col justify-between relative">
+                <div class="apple-glass-card rounded-3xl p-8 border border-indigo-500/50 shadow-[0_0_40px_rgba(99,102,241,0.25)] flex flex-col justify-between relative">
                     <span class="absolute -top-3 right-6 bg-indigo-600 text-white text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full">Most Popular</span>
                     <div>
                         <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">High Conversion</span>
@@ -372,12 +362,12 @@
                             <li>✓ Domain Setup & Complete SEO</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20am%20interested%20in%20the%20Silicon%20Valley%20Package" target="_blank" class="w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all text-xs shadow-lg shadow-indigo-600/30">
+                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20am%20interested%20in%20the%20Silicon%20Valley%20Package" target="_blank" class="w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 rounded-xl transition-all text-xs shadow-lg shadow-indigo-600/40">
                         Choose Luxury Tier
                     </a>
                 </div>
 
-                <div class="apple-glass-card rounded-3xl p-8 border border-white/10 flex flex-col justify-between">
+                <div class="apple-glass-card rounded-3xl p-8 flex flex-col justify-between">
                     <div>
                         <span class="text-xs font-bold uppercase tracking-widest text-purple-400">Custom Engineering</span>
                         <h3 class="text-2xl font-bold text-white mt-2 mb-4">Enterprise Custom</h3>
@@ -389,29 +379,29 @@
                             <li>✓ VIP Priority Consultation</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20need%20a%20Custom%20Enterprise%20Website" target="_blank" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all text-xs">
+                    <a href="https://wa.me/qr/KRZ5CPRYXSSZM1?text=Hi%20ZippyWeb,%20I%20need%20a%20Custom%20Enterprise%20Website" target="_blank" class="w-full text-center bg-white/10 hover:bg-white/20 text-white font-bold py-3 rounded-xl transition-all text-xs border border-white/10">
                         Get Custom Quote
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Interactive Client Feedback Section -->
+        <!-- Client Feedback -->
         <section id="feedback" class="relative z-10 py-24 px-6 max-w-4xl mx-auto border-t border-white/10">
-            <div class="apple-glass-card rounded-3xl p-8 md:p-12 border border-white/10">
+            <div class="apple-glass-card rounded-3xl p-8 md:p-12">
                 <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold block mb-1">Client Reviews</span>
                 <h2 class="text-3xl font-extrabold text-white mb-2">Leave Your Feedback</h2>
                 <p class="text-gray-400 text-xs mb-8">Worked with us recently? Share your experience with Zippy Web Agency.</p>
 
                 <form onsubmit="handleFeedbackSubmit(event)" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" id="clientName" placeholder="Your Name / Business Name" required class="bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500">
-                        <select id="clientRating" class="bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-xs text-gray-300 focus:outline-none focus:border-indigo-500">
+                        <input type="text" id="clientName" placeholder="Your Name / Business Name" required class="bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500">
+                        <select id="clientRating" class="bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-gray-300 focus:outline-none focus:border-indigo-500">
                             <option value="5">⭐⭐⭐⭐⭐ (5/5 Stars)</option>
                             <option value="4">⭐⭐⭐⭐ (4/5 Stars)</option>
                         </select>
                     </div>
-                    <textarea id="clientMsg" rows="3" placeholder="Write your feedback or experience here..." required class="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
+                    <textarea id="clientMsg" rows="3" placeholder="Write your feedback or experience here..." required class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-indigo-500"></textarea>
                     <button type="submit" class="apple-btn font-bold px-6 py-3 rounded-xl text-xs w-full sm:w-auto">
                         Submit Feedback via WhatsApp →
                     </button>
@@ -419,7 +409,7 @@
             </div>
         </section>
 
-        <!-- Google My Business & Local Presence Card -->
+        <!-- GMB Card -->
         <section class="relative z-10 py-12 px-6 max-w-5xl mx-auto">
             <div class="apple-glass-card rounded-2xl p-6 border border-indigo-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div class="flex items-center gap-4">
@@ -437,9 +427,9 @@
             </div>
         </section>
 
-        <!-- Leadership / Founder Section -->
+        <!-- Founder Section -->
         <section id="founder" class="relative z-10 py-24 px-6 max-w-5xl mx-auto border-t border-white/10">
-            <div class="apple-glass-card rounded-3xl p-8 md:p-12 border border-white/10 flex flex-col md:flex-row items-center gap-12">
+            <div class="apple-glass-card rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-1/2 flex justify-center">
                     <div class="relative w-64 h-80 rounded-2xl overflow-hidden border border-indigo-500/30 shadow-[0_0_50px_rgba(99,102,241,0.25)]">
                         <img src="owner.jpg" alt="Founder Portrait" class="w-full h-full object-cover">
@@ -460,10 +450,9 @@
             </div>
         </section>
 
-        <!-- Footer Section -->
+        <!-- Footer -->
         <footer id="contact" class="relative z-10 bg-[#EFEFEF] text-[#111111] pt-20 pb-12 px-6 border-t border-gray-300">
             <div class="max-w-6xl mx-auto">
-                
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
                     <div class="lg:col-span-5 flex flex-col justify-between">
                         <div>
@@ -506,7 +495,6 @@
                     </div>
                 </div>
 
-                <!-- Social Media Buttons Row -->
                 <div class="pt-8 border-t border-gray-300 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-gray-500 font-medium">
                     <div class="flex flex-wrap items-center gap-3">
                         <a href="https://x.com/ravinderrr_9" target="_blank" class="social-pill px-4 py-2 rounded-full font-bold text-xs shadow-sm flex items-center gap-2">
@@ -528,14 +516,13 @@
                         <span>© 2026 Zippy Web Agency</span>
                     </div>
                 </div>
-
             </div>
         </footer>
     </div>
 
-    <!-- Interactive Case Details Modal -->
+    <!-- Case Modal -->
     <div id="caseModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
-        <div class="apple-glass-card max-w-lg w-full rounded-3xl p-8 border border-white/20 relative">
+        <div class="apple-glass-card max-w-lg w-full rounded-3xl p-8 relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
             <span id="modalCategory" class="text-[10px] uppercase font-bold tracking-widest text-indigo-400">Category</span>
             <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-1 mb-4">Project Title</h3>
@@ -546,7 +533,7 @@
         </div>
     </div>
 
-    <!-- Lead Capture Modal -->
+    <!-- Lead Modal -->
     <div id="leadModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4">
         <div class="apple-glass-card max-w-md w-full rounded-3xl p-8 border border-indigo-500/40 relative">
             <button onclick="closeLeadModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white font-bold text-xl">✕</button>
@@ -565,92 +552,116 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- 60FPS High-Performance 3D Engine Script -->
     <script>
-        // --- THREE.JS 3D INTERACTIVE ENGINE ---
         const canvas = document.getElementById('webgl-canvas');
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 30;
+        camera.position.z = 25;
 
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-        // 1. Interactive 3D Icosahedron Geometric Shape
-        const geometry = new THREE.IcosahedronGeometry(10, 2);
-        const material = new THREE.MeshPhongMaterial({
-            color: 0x6366f1,
-            wireframe: true,
-            transparent: true,
-            opacity: 0.35,
-            emissive: 0x4338ca,
-            emissiveIntensity: 0.2
+        // Optimized Renderer for High FPS on Mobile
+        const renderer = new THREE.WebGLRenderer({ 
+            canvas: canvas, 
+            alpha: true, 
+            antialias: true,
+            powerPreference: "high-performance"
         });
-        const sphere3D = new THREE.Mesh(geometry, material);
-        sphere3D.position.set(12, 5, -5);
-        scene.add(sphere3D);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
-        // 2. Floating 3D Tech Particle System
-        const particlesCount = 350;
+        // 1. High-Shine Metallic 3D Geometric Core
+        const isMobile = window.innerWidth < 768;
+        const geometry = new THREE.IcosahedronGeometry(isMobile ? 6 : 8, 1);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0x6366f1,
+            roughness: 0.1,
+            metalness: 0.9,
+            wireframe: false,
+            emissive: 0x4f46e5,
+            emissiveIntensity: 0.6
+        });
+        const main3DObject = new THREE.Mesh(geometry, material);
+        
+        if(isMobile) {
+            main3DObject.position.set(0, 4, -4);
+        } else {
+            main3DObject.position.set(11, 2, 0);
+        }
+        scene.add(main3DObject);
+
+        // Glowing Orbit Rings
+        const ringGeo = new THREE.TorusGeometry(isMobile ? 9 : 12, 0.25, 12, 64);
+        const ringMat = new THREE.MeshBasicMaterial({ color: 0xa5b4fc, wireframe: true });
+        const ring3D = new THREE.Mesh(ringGeo, ringMat);
+        main3DObject.add(ring3D);
+
+        // 2. High-Visibility Floating 3D Star Particles
+        const particlesCount = isMobile ? 120 : 250;
         const posArray = new Float32Array(particlesCount * 3);
         for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 80;
+            posArray[i] = (Math.random() - 0.5) * 60;
         }
         const particlesGeometry = new THREE.BufferGeometry();
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.25,
+            size: isMobile ? 0.45 : 0.35,
             color: 0x818cf8,
             transparent: true,
-            opacity: 0.7
+            opacity: 0.95
         });
         const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
         scene.add(particlesMesh);
 
-        // 3. Lights
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+        // Lighting System
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
         scene.add(ambientLight);
 
-        const pointLight = new THREE.PointLight(0x818cf8, 2);
-        pointLight.position.set(20, 20, 20);
-        scene.add(pointLight);
+        const light1 = new THREE.PointLight(0x818cf8, 4, 100);
+        light1.position.set(15, 15, 15);
+        scene.add(light1);
 
-        // Mouse Parallax Effect
-        let mouseX = 0;
-        let mouseY = 0;
+        const light2 = new THREE.PointLight(0xc084fc, 3, 100);
+        light2.position.set(-15, -15, -10);
+        scene.add(light2);
+
+        // Touch & Mouse Interaction
+        let mouseX = 0, mouseY = 0;
         window.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.5;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.5;
+            mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
+            mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
         });
 
-        // Responsive Resizing
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                mouseX = (e.touches[0].clientX - window.innerWidth / 2) * 0.0008;
+                mouseY = (e.touches[0].clientY - window.innerHeight / 2) * 0.0008;
+            }
+        }, { passive: true });
+
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Animation Loop
+        // Optimized Animation Loop
         function animate() {
             requestAnimationFrame(animate);
 
-            // Auto Rotation & Mouse Tracking
-            sphere3D.rotation.x += 0.003;
-            sphere3D.rotation.y += 0.005;
+            main3DObject.rotation.x += 0.004;
+            main3DObject.rotation.y += 0.006;
+            ring3D.rotation.z -= 0.008;
 
-            particlesMesh.rotation.y += 0.0008;
+            main3DObject.rotation.y += (mouseX - main3DObject.rotation.y) * 0.05;
+            main3DObject.rotation.x += (mouseY - main3DObject.rotation.x) * 0.05;
 
-            // Smooth Mouse Interpolation
-            camera.position.x += (mouseX * 5 - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY * 5 - camera.position.y) * 0.05;
-            camera.lookAt(scene.position);
+            particlesMesh.rotation.y += 0.0006;
 
             renderer.render(scene, camera);
         }
         animate();
 
-        // --- UI MODAL FUNCTIONS ---
+        // Modals Logic
         function openModal(title, category, desc, link) {
             document.getElementById('modalTitle').innerText = title;
             document.getElementById('modalCategory').innerText = category;
@@ -690,6 +701,5 @@
             window.open(`https://wa.me/qr/KRZ5CPRYXSSZM1?text=${text}`, '_blank');
         }
     </script>
-
 </body>
 </html>
